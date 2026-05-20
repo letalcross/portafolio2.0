@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Navarro · Portafolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<input type="checkbox" id="menu-toggle" class="menu-checkbox">
+
+<nav class="navbar">
+    <div class="logo">
+        <a href="#inicio" class="logo-link">
+            <img src="https://via.placeholder.com/40x40?text=LOGO" alt="Logo" class="logo-img">
+            <span class="logo-red"></span>
+        </a>
+    </div>
+    <label for="menu-toggle" class="hamburger">
+        <span></span><span></span><span></span>
+    </label>
+    <ul class="nav-links">
+        <li><a href="#trabajos">Trabajos</a></li>
+        <li><a href="#info">Info</a></li>
+        <li><a href="#musica">Música</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <div class="contact-right">
+        <a href="#contacto" class="btn-contact">Contacto</a>
+    </div>
+</nav>
+
+<main>
+    <section id="inicio" class="section hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero">
+            <h1 class="hero-title">Navarro<span class="dot-red">.</span></h1>
+            <p class="hero-sub">Diseño + sonido + código</p>
+            <a href="#trabajos" class="btn-primary">Ver trabajos →</a>
+        </div>
+    </section>
+
+    <section id="trabajos" class="section">
+        <div class="section-content">
+            <h2 class="section-title clip-slide">Trabajos</h2>
+            <div class="grid-cards work-grid">
+                <div class="card work-card">
+                    <img src="https://picsum.photos/id/100/400/300" alt="Proyecto Alpha" loading="lazy">
+                    <div class="card-info">
+                        <h3>Proyecto Alpha</h3>
+                        <p class="card-tag">Branding / Web / 2024</p>
+                        <p class="card-desc">Identidad visual completa, diseño de interfaz y desarrollo front-end para startup tecnológica.</p>
+                    </div>
+                </div>
+                <div class="card work-card">
+                    <img src="https://picsum.photos/id/20/400/300" alt="Identidad visual" loading="lazy">
+                    <div class="card-info">
+                        <h3>Identidad visual · Estudio Luma</h3>
+                        <p class="card-tag">Branding / 2023</p>
+                        <p class="card-desc">Diseño de logotipo, paleta cromática y sistema gráfico para estudio de arquitectura.</p>
+                    </div>
+                </div>
+                <div class="card work-card">
+                    <img src="https://picsum.photos/id/30/400/300" alt="Interacción" loading="lazy">
+                    <div class="card-info">
+                        <h3>Interacción · Museo Lab</h3>
+                        <p class="card-tag">Motion / UI / 2024</p>
+                        <p class="card-desc">Instalación interactiva con tracking de movimiento y visuales generativas.</p>
+                    </div>
+                </div>
+                <div class="card work-card">
+                    <img src="https://picsum.photos/id/26/400/300" alt="Arte digital" loading="lazy">
+                    <div class="card-info">
+                        <h3>Arte digital · Serie "Pliegues"</h3>
+                        <p class="card-tag">Arte generativo / 2025</p>
+                        <p class="card-desc">Obras creadas con algoritmos de distorsión, expuestas en galería virtual.</p>
+                    </div>
+                </div>
+                <div class="card work-card">
+                    <img src="https://picsum.photos/id/42/400/300" alt="Fotografía" loading="lazy">
+                    <div class="card-info">
+                        <h3>Serie "Ruido"</h3>
+                        <p class="card-tag">Fotografía experimental / 2024</p>
+                        <p class="card-desc">Exploración de texturas urbanas y largas exposiciones nocturnas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="info" class="section">
+        <div class="section-content">
+            <h2 class="section-title clip-slide">Info</h2>
+            <div class="radical-timeline">
+                <div class="timeline-entry">
+                    <div class="timeline-year">2022</div>
+                    <div class="timeline-desc">Inicio de estudios en Diseño Gráfico en UBA. Primer contacto con el código y el diseño sonoro.</div>
+                </div>
+                <div class="timeline-entry">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-desc">Desarrollo creativo freelance. Branding para pequeñas marcas y experimentación con síntesis modular.</div>
+                </div>
+                <div class="timeline-entry">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-desc">Lanzamiento del EP "Rojo". Colaboraciones con músicos experimentales y primeras exposiciones de arte interactivo.</div>
+                </div>
+                <div class="timeline-entry">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-desc">Residencia en Laboratorio de Medios. Desarrollo de instalaciones con IA y visuales en tiempo real.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="musica" class="section">
+        <div class="section-content">
+            <h2 class="section-title clip-slide">Música</h2>
+            <div class="carousel-container">
+                <button class="carousel-btn prev" aria-label="Anterior">←</button>
+                <div class="carousel-wrapper">
+                    <div class="carousel-track">
+                        <div class="music-card">
+                            <div class="vinyl"></div>
+                            <h3>EP "Rojo"</h3>
+                            <p class="music-year">2024 · Digital</p>
+                            <p class="music-desc">Tres tracks de electrónica orgánica, mezclando field recordings y sintetizadores analógicos.</p>
+                            <span class="music-tag">#ambient #experimental</span>
+                        </div>
+                        <div class="music-card">
+                            <div class="vinyl"></div>
+                            <h3>Remix Studio</h3>
+                            <p class="music-year">2024 · Colaboración</p>
+                            <p class="music-desc">Remix oficial para el sello Subreal. Reinterpretación con capas glitch y ritmos fracturados.</p>
+                            <span class="music-tag">#remix #glitch</span>
+                        </div>
+                        <div class="music-card">
+                            <div class="vinyl"></div>
+                            <h3>Live "Frecuencias"</h3>
+                            <p class="music-year">2025 · Presentación</p>
+                            <p class="music-desc">Set en vivo de 45 min con sintetizadores modulares y controladores hápticos. Grabación en estudio.</p>
+                            <span class="music-tag">#live #modular</span>
+                        </div>
+                        <div class="music-card">
+                            <div class="vinyl"></div>
+                            <h3>Banda sonora "Nadir"</h3>
+                            <p class="music-year">2025 · Cortometraje</p>
+                            <p class="music-desc">Música original para corto de ciencia ficción. Texturas oscuras y drones atmosféricos.</p>
+                            <span class="music-tag">#soundtrack #cinematic</span>
+                        </div>
+                        <div class="music-card">
+                            <div class="vinyl"></div>
+                            <h3>Próximo LP "Ciclos"</h3>
+                            <p class="music-year">2025 · En producción</p>
+                            <p class="music-desc">Álbum conceptual sobre loops temporales. Colaboración con percusionistas experimentales.</p>
+                            <span class="music-tag">#album #comingsoon</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next" aria-label="Siguiente">→</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="section">
+        <div class="section-content contact-center">
+            <h2 class="section-title clip-slide">Contacto</h2>
+            <p class="contact-sub">Escribime y te responderé a la brevedad</p>
+            <form class="modern-form">
+                <div class="form-group">
+                    <input type="text" id="nombre" placeholder=" " required>
+                    <label for="nombre">Nombre</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder=" " required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="form-group">
+                    <textarea id="mensaje" rows="4" placeholder=" " required></textarea>
+                    <label for="mensaje">Mensaje</label>
+                </div>
+                <button type="submit" class="btn-submit">Enviar mensaje →</button>
+            </form>
+            <div class="socials">
+                <a href="#">IG</a> / <a href="#">BCN</a> / <a href="#">GH</a>
+            </div>
+            <footer class="footer-mini">
+                <p>© 2025 — Navarro · diseño y sonido</p>
+            </footer>
+        </div>
+    </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
