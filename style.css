@@ -11,7 +11,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 50px; /* Reducido para que el título quede más arriba */
+    scroll-padding-top: 50px;
 }
 
 body {
@@ -22,9 +22,8 @@ body {
     overflow-x: hidden;
 }
 
-/* Ajuste crucial: el margen de scroll de cada sección */
 section {
-    scroll-margin-top: 50px; /* Mismo valor que scroll-padding-top */
+    scroll-margin-top: 50px;
 }
 
 /* -------------------------------
@@ -166,7 +165,7 @@ section {
 .section {
     min-height: 100vh;
     position: relative;
-    padding: 0 2rem 4rem; /* SIN padding-top, así el título queda pegado arriba */
+    padding: 0 2rem 4rem;
     background: #0a0a0a;
 }
 
@@ -192,7 +191,7 @@ section {
 .section-title {
     font-size: 3.2rem;
     font-weight: 800;
-    margin: 0 0 2rem 0; /* Sin margen superior */
+    margin: 0 0 2rem 0;
     letter-spacing: -0.02em;
     background: linear-gradient(135deg, #ffffff, #aaaaaa);
     background-clip: text;
@@ -280,7 +279,7 @@ section {
 }
 
 /* ----------------------------
-   TRABAJOS
+   TRABAJOS (efecto fade-up)
 -------------------------------- */
 .grid-cards {
     display: grid;
@@ -297,6 +296,14 @@ section {
     transition: 0.3s;
     cursor: pointer;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s, border-color 0.3s;
+}
+
+.work-card.reveal {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .work-card:hover {
@@ -336,7 +343,116 @@ section {
 }
 
 /* -------------------------------
-   CARRUSEL DE MÚSICA (sin cortes, con scroll nativo oculto)
+   INFO TIMELINE (con hover y extra-info)
+-------------------------------- */
+.radical-timeline {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.radical-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #E63946;
+    transform: translateX(-50%);
+}
+
+.timeline-entry {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    position: relative;
+    width: 100%;
+    opacity: 0;
+    transform: translateX(0) scale(0.95);
+    transition: opacity 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.timeline-entry.slide-in {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+.timeline-entry:nth-child(odd) {
+    flex-direction: row;
+}
+
+.timeline-entry:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-year {
+    width: 45%;
+    text-align: right;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #E63946;
+    padding-right: 2rem;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.timeline-entry:nth-child(even) .timeline-year {
+    text-align: left;
+    padding-left: 2rem;
+    padding-right: 0;
+}
+
+.timeline-desc {
+    width: 45%;
+    background: rgba(30, 30, 40, 0.8);
+    padding: 1rem 1.5rem;
+    border-left: 3px solid #E63946;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.timeline-entry:nth-child(even) .timeline-desc {
+    border-left: none;
+    border-right: 3px solid #E63946;
+    text-align: right;
+}
+
+/* Hover en toda la entrada */
+.timeline-entry:hover .timeline-year {
+    transform: scale(1.05);
+    text-shadow: 0 0 8px rgba(230, 57, 70, 0.5);
+}
+
+.timeline-entry:hover .timeline-desc {
+    background: rgba(30, 30, 40, 1);
+    border-color: #E63946;
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Información extra que aparece en hover */
+.extra-info {
+    display: block;
+    margin-top: 0.8rem;
+    padding-top: 0.5rem;
+    font-size: 0.85rem;
+    color: #E63946;
+    border-top: 1px dashed rgba(230, 57, 70, 0.3);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+.timeline-entry:hover .extra-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* -------------------------------
+   CARRUSEL DE MÚSICA
 -------------------------------- */
 .carousel-container {
     position: relative;
@@ -363,7 +479,7 @@ section {
     display: flex;
     gap: 2rem;
     width: max-content;
-    padding: 0.5rem 0;
+    padding: 0.5rem 0.5rem;
 }
 
 .music-card {
@@ -379,8 +495,8 @@ section {
 
 .music-card:hover {
     border-color: #E63946;
-    transform: scale(1.02);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transform: none;
 }
 
 .vinyl {
@@ -448,72 +564,6 @@ section {
 .carousel-btn:hover {
     background: #E63946;
     transform: scale(1.02);
-}
-
-/* -------------------------------
-   INFO TIMELINE
--------------------------------- */
-.radical-timeline {
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.radical-timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: #E63946;
-    transform: translateX(-50%);
-}
-
-.timeline-entry {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 3rem;
-    position: relative;
-    width: 100%;
-}
-
-.timeline-entry:nth-child(odd) {
-    flex-direction: row;
-}
-
-.timeline-entry:nth-child(even) {
-    flex-direction: row-reverse;
-}
-
-.timeline-year {
-    width: 45%;
-    text-align: right;
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: #E63946;
-    padding-right: 2rem;
-}
-
-.timeline-entry:nth-child(even) .timeline-year {
-    text-align: left;
-    padding-left: 2rem;
-    padding-right: 0;
-}
-
-.timeline-desc {
-    width: 45%;
-    background: rgba(30, 30, 40, 0.8);
-    padding: 1rem 1.5rem;
-    border-left: 3px solid #E63946;
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-.timeline-entry:nth-child(even) .timeline-desc {
-    border-left: none;
-    border-right: 3px solid #E63946;
-    text-align: right;
 }
 
 /* -------------------------------
@@ -672,7 +722,7 @@ section {
     }
 
     .section {
-        padding: 0 1rem 3rem; /* Sin padding-top */
+        padding: 0 1rem 3rem;
     }
 
     .section-title {
@@ -687,6 +737,7 @@ section {
 
     .carousel-track {
         gap: 1rem;
+        padding: 0.5rem 0.5rem;
     }
 
     .music-card {
